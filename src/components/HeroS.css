@@ -1,0 +1,172 @@
+/* Fondo oscuro general y sobreposición */
+.heroS-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 31, 76, 0.8), rgba(0, 31, 76, 0.8)), url('../img/93.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #001F4C; /* Fondo azul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s ease-in;
+    overflow: hidden;
+}
+
+/* Sección Hero con tarjeta única y borde */
+.hero-mainS-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 95vw;
+    height: 75vh;
+}
+
+/* Contenedor principal de la izquierda */
+.heroS-left {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;  /* Alinea los elementos a la izquierda */
+    padding: 20px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.6); /* Borde blanco brillante */
+    border-radius: 19px;
+    position: relative;
+    max-width: 1380px; /* Ajuste para la tarjeta */
+    max-height: 800px;
+    z-index: 2;
+    text-align: center;
+}
+
+/* Contenedor de imagen (que ocupa la mitad del espacio) */
+.heroS-image-container {
+    width: 50%;  /* Tamaño consistente para las imágenes */
+    height: 400px; /* Ajustamos la altura para todas las imágenes */
+    display: flex;
+    justify-content: flex-start; /* Alinea la imagen a la izquierda */
+    align-items: center;
+    overflow: hidden; /* Oculta cualquier parte de la imagen que sobrepase el contenedor */
+}
+
+/* Imagen de ingeniero (mantener tamaño y proporción) */
+.heroS-engineer-image {
+    width: 100%; /* La imagen ocupa todo el ancho del contenedor */
+    height: 100%; /* Asegura que la imagen cubra toda la altura del contenedor */
+    object-fit: cover; /* Mantiene la proporción sin distorsionar */
+    object-position: left; /* Alinea la imagen a la izquierda */
+}
+
+/* Título y subtítulo */
+.heroS-title {
+    font-size: 3em;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.heroS-subtitle {
+    font-size: 1.5em;
+    color: white;
+    margin-bottom: 40px;
+}
+
+/* Botones centrados */
+.heroS-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.heroS-button {
+    padding: 15px 30px;
+    background-color: #FF7300;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.heroS-button:hover {
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 1024px) {
+    .heroS-left {
+        flex-direction: column; /* Cambia a columna en pantallas pequeñas */
+        text-align: center;
+    }
+
+    .heroS-title {
+        font-size: 2.5em;
+    }
+
+    .heroS-subtitle {
+        font-size: 1.2em;
+    }
+
+    .heroS-image-container {
+        width: 80%; /* Imagen ocupa el 80% del contenedor */
+        height: 300px; /* Ajustamos la altura para pantallas más pequeñas */
+        margin-bottom: 20px; /* Añadir espacio debajo de la imagen */
+    }
+
+    .heroS-engineer-image {
+        width: 100%; /* La imagen ocupa el 100% del contenedor */
+        height: 100%; /* Mantiene la relación de aspecto */
+    }
+
+    .heroS-buttons {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .heroS-button {
+        width: 80%;
+    }
+}
+
+/* Para pantallas aún más pequeñas (máximo 768px de ancho) */
+@media (max-width: 768px) {
+    .heroS-title {
+        font-size: 2em;
+    }
+
+    .heroS-subtitle {
+        font-size: 1em;
+    }
+
+    .heroS-image-container {
+        width: 100%; /* Imagen ocupa el 100% */
+        height: 300px; /* Ajustamos la altura de la imagen */
+        margin-bottom: 20px;
+    }
+
+    .heroS-engineer-image {
+        width: 100%; /* Asegura que la imagen se ajuste bien */
+        height: 100%;
+    }
+
+    .heroS-buttons {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .heroS-button {
+        width: 100%;
+        padding: 12px 0;
+    }
+}

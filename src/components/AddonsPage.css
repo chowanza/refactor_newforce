@@ -1,0 +1,273 @@
+/* General Page Styles */
+.addons-page {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('../img/58.jpg') no-repeat center;
+  background-size: cover;
+  min-height: 100vh;
+  box-sizing: border-box;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Scroll behavior */
+html, body {
+  scroll-behavior: smooth;
+}
+
+.addons-page .addons-content {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Show More button animations */
+.show-more-button {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.show-more-button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* House Details Section */
+.house-details {
+  flex: 1;
+  max-width: 500px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-align: center;
+  animation: slideInLeft 1s ease-in-out;
+}
+
+.house-details img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.house-details h2 {
+  font-size: 1.8rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.house-details p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.house-details .price {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #ff6600;
+  margin-top: 10px;
+}
+
+/* Add-ons Section */
+.addons-section {
+  flex: 1;
+  background-color: rgba(0, 34, 68, 0.9);
+  color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  animation: slideInRight 1s ease-in-out;
+}
+
+.addons-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #f39c12;
+  margin-bottom: 20px;
+}
+
+.addons-section .addons-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .addons-section .addons-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+.addons-section .addon-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  color: #333;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.addons-section .addon-item label {
+  font-size: 0.9rem;
+  margin-left: 10px;
+}
+
+.addons-section .addon-item input {
+  transform: scale(1.1);
+}
+
+/* Summary Section */
+.summary-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid #002244;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 1s ease-in-out;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .summary-container {
+    flex-direction: row;
+  }
+}
+
+.order-info {
+  flex: 1;
+  background-color: rgba(0, 34, 68, 0.9);
+  color: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.order-info h2 {
+  font-size: 1.5rem;
+  color: #f39c12;
+  margin-bottom: 10px;
+}
+
+.order-info p {
+  margin: 5px 0;
+  font-size: 1.1rem;
+}
+
+.payment-button {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.payment-button button {
+  background-color: #f39c12;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.payment-button button:hover {
+  background-color: #d98310;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+.return-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.return-button button {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.return-button button:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+  transition: transform 0.3s ease;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.addon-checkbox {
+  color: #333;
+}
+
+.search-filters input,
+.search-filters select,
+.search-filters label {
+  color: #333;
+}
+
+@media (max-width: 375px) {
+  .responsive-button {
+    font-size: 12px;
+    padding: 6px 8px;
+  }
+
+  .search-filters {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}

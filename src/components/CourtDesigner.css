@@ -1,0 +1,229 @@
+/* Estilos generales */
+
+
+.Main_Render {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  margin-top: 0;
+  font-family: 'Poppins', sans-serif;
+
+}
+
+.Par {
+  padding: 10px;
+  padding-right: 0;
+  margin-right: 10px;
+  backdrop-filter: blur(8px);
+  border: solid;
+  border-radius: 5px;
+  border-width: 1px;
+  border-color: #8ac3ff9a;
+  width: 100%;
+}
+
+
+.Render_Container {
+  width: 60%;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+  margin-right: 5%;
+}
+
+
+
+.Render_options {
+  background-color: #0751a049;
+  /* Azul oscuro */
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  margin-left: 5%;
+}
+
+.Render_options h2 {
+  color: #ff7f00;
+  /* Naranja */
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.Render_options h3 {
+  margin: 10px 0 5px;
+  font-size: 1rem;
+  text-align: start;
+}
+
+/* Inputs y Select */
+input[type="number"],
+select {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  color: black;
+}
+
+input[type="number"] {
+  background-color: #f1f1f1;
+}
+
+select {
+  cursor: pointer;
+  background-color: #001d3d;
+  color: #e66900;
+  font-weight: 700;
+  font-size: large;
+}
+
+/* Radio Buttons */
+.Units {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+}
+.Derecha{
+  display: flex;
+  width: 100%;
+}
+
+.Units label {
+
+
+  padding: 5px 10px;
+  margin: 5px 2px;
+  border-radius: 5px;
+
+
+}
+
+label {
+  color: #e66900;
+  font-weight: 800;
+  margin: 5px;
+}
+
+input[type="radio"] {
+  scale: 1.5;
+}
+
+input[type="checkbox"],
+[type="radio"]:checked {
+  background-image: none;
+  accent-color: #e66900;
+  border: 2px solid white;
+  color: #e66900;
+}
+
+/* Color picker boxes */
+.color-picker {
+  display: flex;
+  gap: 10px;
+}
+
+.color-box {
+  width: 25px;
+  height: 25px;
+
+  cursor: pointer;
+  border: 2px solid #fff;
+  transition: transform 0.2s;
+}
+
+.color-box:hover {
+  transform: scale(1.1);
+}
+
+/* Botón Get Quote */
+.Get_Quote_Button{
+  background-color: #ff7f00;
+  /* Naranja */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #e66900;
+  /* Naranja oscuro */
+}
+
+
+/* Netting */
+.Netting {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.Netting img {
+  max-width: 100%;
+  border: 2px solid #ff7f00;
+  border-radius: 5px;
+}
+
+.color-picker-container{
+  width: 100%;
+}
+.Render_btn{
+  display: none;
+}
+
+.Get_Quote_Button{
+  align-self: center;
+  width: 20%;
+  margin-top: 20px;
+}
+
+.Court_Type {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.Court_Type > div {
+  flex: 0 0 40%; /* Esto permite que cada elemento ocupe hasta el 48% del ancho del contenedor */
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho total */
+  margin-bottom: 10px; /* Espacio entre filas */
+}
+
+@media screen and (max-width:768px) {
+  
+  .Render_options{
+    margin: 0;
+  }
+  .Court_Type > div{
+    flex: none;
+  }
+  .Render_btn{
+    display: block;
+    margin: 7%;
+    width: 50%;
+    background-color: #ff7f00;
+    /* Naranja */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s;
+  }
+  .Render_Container{
+    width: 100%;
+    margin: auto;
+  }
+}

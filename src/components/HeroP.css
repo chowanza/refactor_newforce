@@ -1,0 +1,318 @@
+/* Contenedor principal del Hero */
+.hero-main-container {
+    position: relative;
+    display: flex;
+    width: 95vw;
+    height: 75vh;
+    padding: 20px;
+    box-sizing: border-box;
+    z-index: 2;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 0;
+}
+
+/* Fondo oscuro general y sobreposición */
+.hero-container {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 31, 76, 0.8), rgba(0, 31, 76, 0.8)), url('../img/93.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: #001F4C; /* Fondo azul */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 2s ease-in;
+    overflow: hidden;
+}
+
+/* Sección izquierda del Hero */
+.hero-left {
+    flex: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    border-radius: 19px;
+    position: relative;
+    height: calc(100% - 40px); /* Ajuste para alinear con las tarjetas derechas */
+    overflow: hidden;
+}
+
+.hero-left-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 20px;
+}
+
+.hero-title {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 10px;
+}
+
+.hero-subtitle {
+    font-size: 1.2em;
+    color: #FFFFFF;
+    margin-bottom: 20px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 30px;
+}
+
+.hero-button {
+    width: 150px;
+    padding: 10px;
+    background-color: #FF7300;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.hero-button:hover {
+    transform: scale(1.05);
+}
+
+.hero-engineer-image {
+    width: 350px;
+    height: auto;
+    margin-right: 20px;
+    opacity: 0.95; /* Reducir opacidad para mayor visibilidad */
+}
+
+/* Sección derecha del Hero */
+.hero-right {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 20px;
+    padding: 10px;
+    height: calc(100% - 40px);
+}
+
+/* Tarjetas de la derecha */
+.hero-card {
+    background: transparent;
+    border: 3px solid rgba(255, 255, 255, 0.6);
+    border-radius: 19px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    height: 48%;
+    box-sizing: border-box;
+    justify-content: space-between;
+    position: relative;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen de fondo opaca en las tarjetas */
+.hero-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.5;
+    z-index: 1;
+}
+
+.hero-card h2 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #FFFFFF;
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+    z-index: 2;
+}
+
+/* Contenido dentro de las tarjetas */
+.card-content {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #FFFFFF;
+    background-color: rgba(0, 31, 76, 0.2);
+    padding: 5px 10px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Botón de las tarjetas */
+.card-button {
+    padding: 10px 20px;
+    background-color: #FF7300;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.card-button:hover {
+    transform: scale(1.05);
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Para la resolución 1366x768 */
+@media screen and (max-width: 1366px) {
+    .hero-main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .hero-left {
+        height: auto;
+        width: 100%;
+    }
+
+    .hero-left-content {
+        margin: 0;
+    }
+
+    .hero-title {
+        font-size: 1.75em;
+    }
+
+    .hero-subtitle {
+        font-size: 1em;
+    }
+
+    .hero-left img {
+        width: 25%;
+    }
+
+    .hero-button {
+        font-size: 0.75em;
+        width: auto;
+    }
+
+    .hero-right {
+        padding: 20px 0;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-card {
+        height: 35vh;
+        width: 45%;
+    }
+
+    .hero-card h2 {
+        font-size: 1.2em;
+    }
+}
+
+/* Para resoluciones menores a 768px */
+@media screen and (max-width: 768px) {
+    .hero-main-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .We-are {
+        display: inline;
+        align-self: flex-start;
+    }
+
+    .hero-left {
+        height: auto;
+        width: 100%;
+    }
+
+    .hero-left-content {
+        margin: 0;
+    }
+
+    .hero-left-content h2 {
+        font-size: 1.25em;
+    }
+
+    .hero-left-content p {
+        display: none;
+    }
+
+    .hero-left img {
+        width: 30%;
+    }
+
+    .hero-button {
+        font-size: 0.5em;
+        white-space: nowrap;
+        width: auto;
+    }
+
+    .hero-right {
+        padding: 20px 0;
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-card {
+        height: 33vh;
+        width: 50%;
+    }
+
+    .hero-card img {
+        object-fit: contain;
+    }
+
+    .hero-card h2 {
+        font-size: 1.25em;
+        background-color: transparent;
+    }
+}

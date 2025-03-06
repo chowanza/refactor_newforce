@@ -1,0 +1,237 @@
+/* CSS for SportCourts Component */
+
+/* Canchas Section */
+.canchas {
+  position: relative;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 100%; /* Asegura que se ajuste al contenedor */
+}
+
+.canchas::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../img/padelImage.jpg');
+  background-size: cover;
+  background-position: center;
+  opacity: 0.05; /* Imagen apenas visible */
+  border-radius: 15px;
+  pointer-events: none;
+}
+
+/* Animación de fade-in, usada para la aparición suave */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Aplicar animación sólo cuando haya un cambio */
+.fade-in {
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Título de la sección */
+.section-title {
+  font-size: 32px;
+  color: #333;
+  margin-bottom: 30px;
+  text-align: center;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+/* Botones de Deportes */
+.sport-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.sport-button {
+  width: 70px;
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ddd;
+  border-radius: 50%;
+  background-color: #fff;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.sport-button.active,
+.sport-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border-color: #ff8c00;
+}
+
+/* Icono dentro de cada botón de deporte */
+.sport-icon {
+  width: 35px;
+  height: 35px;
+}
+
+/* Sección del Slideshow */
+.sport-slideshow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  margin: 20px 0;
+  padding: 20px;
+  background-color: transparent; /* Hacer el fondo transparente */
+  border-radius: 15px;
+  box-shadow: none; /* Eliminar la sombra */
+  animation: fadeIn 1s ease-in-out; /* Añadir animación de aparición */
+}
+
+.slideshow-image img {
+  width: 600px; /* Fijar ancho consistente */
+  height: 400px; /* Fijar altura consistente */
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Información en la sección del slideshow */
+.slideshow-info {
+  max-width: 600px; /* Consistencia en el ancho del contenedor de texto */
+  text-align: justify; /* Asegurar que el texto esté justificado */
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: none;
+}
+
+.slideshow-info h2 {
+  font-size: 28px;
+  color: #ff8c00;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.slideshow-info p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Botón de Contacto Centrado */
+.contact-button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #ff8c00;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease-in-out;
+  display: block;
+  margin: 15px auto 0 auto; /* Centrar el botón horizontalmente y agregar margen superior */
+}
+
+.contact-button:hover {
+  background-color: #ff6500;
+  transform: scale(1.05);
+}
+
+/* Responsive Styles for Mobile and Tablets (<= 768px) */
+@media (max-width: 768px) {
+  .sport-mobile-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 20px;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    animation: fadeIn 1s ease-in-out; /* Añadir animación de aparición */
+  }
+
+  .sport-buttons {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+    justify-items: center;
+  }
+
+  .sport-button {
+    width: 60px;
+    height: 60px;
+  }
+
+  .sport-icon {
+    width: 30px;
+    height: 30px;
+  }
+
+  .sport-mobile-summary h2 {
+    font-size: 1.5rem;
+    color: #ff8c00;
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .sport-mobile-summary img.sport-image {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    aspect-ratio: 1 / 1; /* Asegura que mantenga una proporción cuadrada */
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    object-fit: cover;
+  }
+
+  .sport-mobile-summary p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .contact-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ff8c00;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: block;
+  }
+
+  .contact-button:hover {
+    background-color: #ff6500;
+  }
+}
+
+/* Fade-in animation for smooth appearance */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,242 @@
+/* src/pages/InvestWithUs.css */
+
+.invest-with-us-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header específico para Invest With Us */
+.invest-with-us-page .invest-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: white;
+    z-index: 1000;
+    padding: 10px 0;
+}
+
+.invest-with-us-page .invest-header-container {
+    max-width: 1200px; /* Limita el ancho del header */
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.invest-with-us-page .invest-logo {
+    height: 60px;
+}
+
+.invest-with-us-page .invest-nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+.invest-with-us-page .invest-nav-buttons button {
+    background: none;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.invest-with-us-page .invest-nav-buttons button:hover {
+    color: #FF7300;
+    transform: scale(1.1);
+}
+
+.invest-with-us-page .invest-nav-buttons button::after {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #FF7300;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease;
+}
+
+.invest-with-us-page .invest-nav-buttons button:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* Hero Section */
+.invest-with-us-page .invest-hero {
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    padding: 0 5%;
+}
+
+.invest-with-us-page .invest-hero-overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 40px;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.invest-with-us-page .invest-hero-overlay h1 {
+    color: #FF7300;
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.invest-with-us-page .invest-hero-overlay p {
+    font-size: 1.2rem;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.invest-with-us-page .invest-hero-button {
+    padding: 12px 30px;
+    background-color: #FF7300;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+.invest-with-us-page .invest-hero-button:hover {
+    background-color: #CC5E00;
+    transform: scale(1.05);
+}
+
+/* Investment Opportunities Section */
+.invest-opportunities {
+    position: relative;
+    padding: 60px 5%;
+    text-align: center;
+    background-image: url('../img/invest-hero.jpg');
+    color: #333;
+    display: flex;
+    flex-direction: column;
+
+    background-size: cover;
+    background-position: center;
+}
+.invest-opportunities::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Capa transparente */
+    z-index: 1;
+  }
+
+
+.invest-opportunities h2 {
+    font-size: 2.5rem;
+    color: #FF7300;
+    margin-bottom: 40px;
+    animation: fadeIn 1.5s ease-in-out;
+    font-weight: 800;
+    text-align: start;
+    position: relative;
+    z-index: 2; /* Para que el texto esté por encima del fondo y la capa */
+
+
+
+}
+
+.invest-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    position: relative;
+    z-index: 2; /* Para que el texto esté por encima del fondo y la capa */
+
+}
+
+.invest-card {
+    display: flex;
+    flex-direction: column;
+    width: 30%;
+    padding: 25px;
+    border-radius: 8px;
+    align-items: center;
+
+    justify-content: space-evenly;
+    animation: slideUp 0.5s ease forwards;
+
+}
+
+
+.invest-card p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* Footer */
+.invest-with-us-page .invest-footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.invest-with-us-page .invest-footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.invest-with-us-page .invest-footer-icons i {
+    font-size: 1.5rem;
+    color: #FF7300;
+    transition: color 0.3s ease;
+}
+
+.invest-with-us-page .invest-footer-icons i:hover {
+    color: #CC5E00;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@media screen and (max-width: 768px) {
+    .invest-card p{
+        font-size: 0.7em;
+    }
+    .invest-card h3{
+        font-size: 1.2em;
+    }
+    .invest-card{
+        width: 45%;
+    }
+    .invest-opportunities h2{
+        font-size: 1.75em;
+        text-align: center;
+    }
+}

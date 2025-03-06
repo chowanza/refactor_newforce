@@ -1,0 +1,45 @@
+/* Icono_titulo.css */
+
+.expertise_icon_title {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Utiliza el 90% del ancho de la pantalla */
+    max-width: 300px; /* Limita el ancho máximo en pantallas grandes */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: left;
+    flex-direction: column;
+  }
+  
+  /* Ajustes de tamaño para el ícono y el título */
+  #icon {
+    width: 7vw; /* Tamaño del ícono */
+    height: auto;
+    border-radius: 100%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+    background-color: #FFFF;
+  }
+  
+  h3 {
+    font-size: clamp(1em, 1.5vw, 1.5em); /* Ajusta según el tamaño de texto deseado */
+    margin: 0;
+    font-weight: 700;
+    color: #FF6F00;
+    text-align: center;
+  }
+  
+  /* Media query para pantallas medianas */
+  @media (min-width: 768px) {
+    .expertise_icon_title {
+      width: 45vw; /* Ajusta el ancho para pantallas de tamaño medio */
+    }
+  }
+  
+  /* Media query para pantallas grandes */
+  @media (min-width: 1024px) {
+    .expertise_icon_title {
+      width: 25vw; /* Ajusta el ancho para pantallas más grandes */
+    }
+  }
+  

@@ -1,0 +1,108 @@
+/* Contenedor externo para el header con bordes redondeados */
+.header-outer-container {
+    position: fixed;
+    top: 0;
+    width: 95%;
+    margin: 20px 20px 20px 20px ;
+    /* Centra el header horizontalmente y agrega margen superior e inferior */
+    border-radius: 19px;
+    /* Bordes redondeados en la parte inferior */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(17.5px);
+    box-sizing: border-box;
+    z-index: 999;
+
+}
+
+/* Contenedor del header principal */
+.header-container {
+    padding: 10px;
+    border-radius: 19px 19px 19px 19px; /* Bordes redondeados para el contenedor interno también */
+}
+
+/* Header y navegación */
+.custom-navbar {
+    background-color: rgba(27, 53, 91, 0.95);
+    /* Ajuste del alpha para más opacidad */
+    border-radius: 19px;
+    outline: 2px solid rgb(77, 97, 126);
+    /* Agrega un borde azul claro */
+}
+
+/* Logo */
+.logo {
+    height: 60px;
+    /* Fixed height for the logo */
+    width: auto;
+    /* Maintain aspect ratio */
+    transform: scale(1.5);
+    /* Scale the logo */
+    transform-origin: left center;
+    /* Keep the scaling origin at the left center */
+}
+
+/* Navigation buttons */
+.nav-buttons {
+    gap: 20px;
+    margin-right: 20px;
+}
+
+.nav-buttons button {
+    background: none;
+    color: #fff;
+    border: none;
+    padding: 5px 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+
+.nav-buttons button::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #FF7300;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-buttons button:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+.nav-buttons button:hover {
+    color: #FF7300;
+}
+
+/* Highlight the active button */
+.nav-button.active button {
+    color: #FF7300;
+}
+
+.nav-button.active button::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Asegurar que el contenido no se superponga con el header */
+.section {
+    padding-top: 140px; /* Incrementa el padding-top para garantizar que el contenido no se superponga con el header */
+}
+
+@media (max-width: 768px) {
+    .header-outer-container {
+            width: 100%;
+            margin: 0px;
+            border-radius: 0px;
+    .custom-navbar
+    {
+        border-radius: 0px;
+    }
+    }
+    
+}

@@ -1,0 +1,22 @@
+.affordable-houses-page {
+  color: #333;
+}
+
+.catalogo-section {
+  padding: 40px 20px;
+  background-color: #f4f4f4;
+  text-align: center;
+}
+
+.catalogo-section h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.catalogo-section p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+

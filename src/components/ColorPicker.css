@@ -1,0 +1,77 @@
+/* Contenedor principal */
+.color-picker-container {
+  color: #ff7f00; /* Texto naranja */
+  border-radius: 8px;
+  margin: 20px auto;
+  font-family: 'Poppins', sans-serif;
+  width: 100%;
+}
+
+/* Título con ícono desplegable */
+.title { 
+  display: inline-block;
+  color: #ff7f00 !important;
+}
+
+.dropdown-arrow {
+  font-size: 0.8em;
+  margin-left: 5px;
+}
+
+/* Opciones de color */
+.color-options {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.color-option {
+  width: 40px;
+  height: 40px;
+  border-radius: 10%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+  margin: 5px;
+}
+
+.color-option.selected {
+  border: 2px solid #ff8200;
+}
+
+/* Texto del color seleccionado */
+.selected-color-text {
+  font-size: 1.1em;
+  color: #ff8200;
+}
+
+.selected-color-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.color-box {
+  width: 100%;
+  height: 40px;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+}
+
+.Color_property{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.color-picker-container img {
+  width: 10%; /* o el tamaño que desees */
+  height: auto; /* Mantiene la proporción */
+  object-fit: contain; /* O cover, según lo que necesites */
+}
+
+.title{
+  margin-bottom: 0 !important;
+}

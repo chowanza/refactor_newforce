@@ -1,0 +1,20 @@
+@media screen and (max-width: 768px) {
+  .expertise_icon_title {
+      font-size: 0.7rem;
+  }
+  #icon{
+    width: 10vh;
+  }
+}
+
+.mission-image{
+  padding-top: 5%;
+  width: 100%;
+}
+.mission-componente{
+  margin: 0;
+}
+
+.slick-dots{
+  background-color: white;
+}
