@@ -17,7 +17,7 @@ function AffordableHouses() {
 
       {/* Hero Section */}
       <HeroS
-        heroTitle="Affordable Houses"
+        heroTitle="Modular Housing"
         heroSubtitle="Discover affordable, eco-friendly housing solutions tailored for your lifestyle."
         heroImg={heroimage}
       />
@@ -29,10 +29,10 @@ function AffordableHouses() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="contact-section">
+      {/*<section id="contact" className="contact-section">
         <ContactForm />
         <img src={contactImage} alt="Contact" />
-      </section>
+      </section>/*}
 
       {/* Social Media Links */}
       <Socials />

@@ -154,10 +154,11 @@ function SportCourts() {
       </section>
       <DesignCourt/>
 
-      <section  id="contact" className="contact-section">
+      {/*<section  id="contact" className="contact-section">
        <ContactForm />
         <img src={contactImage} alt="Contact" />
-      </section>
+      </section>*/}
+      
       {showContactPanel && (
         <ContactoModal selectedProduct={selectedProduct} closeContactPanel={closeContactPanel} />
       )}
