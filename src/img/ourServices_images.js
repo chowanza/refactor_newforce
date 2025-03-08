@@ -1,0 +1,28 @@
+const images = {
+  newConstruction: require('./new-construction.jpg'),
+  remodeling: require('./remodeling.png'),
+  roofing: require('./roofing.jpg'),
+  kitchenRemodel: require('./kitchen-remodel.jpg'),
+  flooring: require('./flooring.jpg'),
+  painting: require('./painting.jpg'),
+  concrete: require('./concrete.jpg'),
+  electricalPlumbing: require('./electrical-plumbing.jpg'),
+  hvac: require('./hvac.png'),
+  inspections: require('./inspections.jpg'),
+  waterDamage: require('./water-damage.jpg'),
+  deckOutdoor: require('./deck-outdoor.jpg'),
+  projectManagement: require('./project-management.png'),
+  metalRoofing: require('./metal-roofing.jpg'),
+  tileRoofing: require('./tile-roofing.jpg'),
+  flatRoofing: require('./flat-roofing.jpg'),
+  modifiedBitumen: require('./modified-bitumen.jpg'),
+  slateRoofing: require('./slate-roofing.jpg'),
+  woodShakeRoofing: require('./wood-shake-roofing.jpg'),
+  syntheticRoofing: require('./synthetic-roofing.jpg'),
+  standingSeam: require('./standing-seam.jpg'),
+  builtUpRoofing: require('./built-up-roofing.jpg'),
+  greenRoof: require('./green-roof.jpg'),
+  roofCoating: require('./roof-coating.jpg'),
+};
+
+export default images;

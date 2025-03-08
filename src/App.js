@@ -1,7 +1,6 @@
 import React, { useState,  useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import './App.css';
-import './components/Catalog.css'; // Archivo CSS del catálogo movido a la carpeta componentes
 import ContactForm from './components/ContactForm'; // Contact form
 import contactImage from './img/contact-image.jpg'; // Contact section image
 import InvestWithUs from './pages/InvestWithUs'; 
@@ -16,8 +15,7 @@ import housesImage from './img/GC.png';
 import Mission from './components/Mission';
 import AffordableHouses from './pages/AffordableHouses'; // Importar el componente
 import AddonsPage from "./components/AddonsPage";
-
-
+import Catalog from './components/Catalog';
 
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -32,31 +30,6 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Navigation, Pagination } from 'swiper/modules';
 
-// Importación de imágenes para el catálogo
-import newConstructionImage from './img/new-construction.jpg';
-import remodelingImage from './img/remodeling.png';
-import roofingImage from './img/roofing.jpg';
-import kitchenRemodelImage from './img/kitchen-remodel.jpg';
-import flooringImage from './img/flooring.jpg';
-import paintingImage from './img/painting.jpg';
-import concreteImage from './img/concrete.jpg';
-import electricalPlumbingImage from './img/electrical-plumbing.jpg';
-import hvacImage from './img/hvac.png';
-import inspectionsImage from './img/inspections.jpg';
-import waterDamageImage from './img/water-damage.jpg';
-import deckOutdoorImage from './img/deck-outdoor.jpg';
-import projectManagementImage from './img/project-management.png';
-import metalRoofingImage from './img/metal-roofing.jpg';
-import tileRoofingImage from './img/tile-roofing.jpg';
-import flatRoofingImage from './img/flat-roofing.jpg';
-import modifiedBitumenImage from './img/modified-bitumen.jpg';
-import slateRoofingImage from './img/slate-roofing.jpg';
-import woodShakeRoofingImage from './img/wood-shake-roofing.jpg';
-import syntheticRoofingImage from './img/synthetic-roofing.jpg';
-import standingSeamImage from './img/standing-seam.jpg';
-import builtUpRoofingImage from './img/built-up-roofing.jpg';
-import greenRoofImage from './img/green-roof.jpg';
-import roofCoatingImage from './img/roof-coating.jpg';
 import Work from './components/Work';
 import CheckoutForm from './components/CheckoutForm.js';
 
@@ -99,132 +72,7 @@ function App() {
     setShowContactPanel(false); // Oculta el panel
   };
 
-  const services = {
-    general: [
-      {
-        image: newConstructionImage,
-        title: 'New Construction',
-        description: 'Residential & Commercial construction from planning to final finishes.',
-      },
-      {
-        image: remodelingImage,
-        title: 'Remodeling and Renovations',
-        description: 'Full remodeling services for your home or business.',
-      },
-      {
-        image: paintingImage,
-        title: 'Exterior and Interior Painting',
-        description: 'Professional painting services for both exterior and interior projects.',
-      },
-      {
-        image: kitchenRemodelImage,
-        title: 'Kitchen and Bathroom Remodeling',
-        description: 'Comprehensive kitchen and bathroom remodeling services.',
-      },
-      {
-        image: flooringImage,
-        title: 'Flooring Installation',
-        description: 'Hardwood, laminate, vinyl, and tile flooring installation services.',
-      },
-      {
-        image: concreteImage,
-        title: 'Concrete Work',
-        description: 'Driveways, patios, foundations, and custom concrete installations.',
-      },
-      {
-        image: electricalPlumbingImage,
-        title: 'Electrical and Plumbing Installations',
-        description: 'Electrical wiring, lighting, and plumbing installation for new builds and repairs.',
-      },
-      {
-        image: hvacImage,
-        title: 'HVAC Installation and Maintenance',
-        description: 'Efficient heating, ventilation, and air conditioning systems for your property.',
-      },
-      {
-        image: waterDamageImage,
-        title: 'Water Damage Restoration and Mitigation',
-        description: 'Rapid response for water damage restoration, including mold remediation.',
-      },
-      {
-        image: deckOutdoorImage,
-        title: 'Custom Decks and Outdoor Living Spaces',
-        description: 'Custom-built decks and outdoor living spaces designed for beauty and durability.',
-      },
-      {
-        image: projectManagementImage,
-        title: 'Permitting and Project Management',
-        description: 'We handle all phases of construction, from permits to project management.',
-      },
-    ],
-    roofing: [
-      {
-        image: roofingImage,
-        title: 'Asphalt Shingle Roofing',
-        description: 'Cost-effective and popular roofing option for residential properties.',
-      },
-      {
-        image: inspectionsImage,
-        title: 'Roof and Building Inspections',
-        description: 'Comprehensive inspections for roofs and buildings to identify potential issues.',
-      },
-      {
-        image: metalRoofingImage,
-        title: 'Metal Roofing',
-        description: 'Durable and energy-efficient roofing solution for all types of properties.',
-      },
-      {
-        image: tileRoofingImage,
-        title: 'Tile Roofing (Clay & Concrete)',
-        description: 'Classic look with excellent durability for extreme weather conditions.',
-      },
-      {
-        image: flatRoofingImage,
-        title: 'Flat Roofing (TPO, EPDM, and PVC)',
-        description: 'Durable and energy-efficient flat roofing solutions for modern homes and commercial buildings.',
-      },
-      {
-        image: modifiedBitumenImage,
-        title: 'Modified Bitumen Roofing',
-        description: 'Superior waterproofing for low-slope and flat roofs in commercial buildings.',
-      },
-      {
-        image: slateRoofingImage,
-        title: 'Slate Roofing',
-        description: 'Timeless and highly durable roofing solution, perfect for long-lasting installations.',
-      },
-      {
-        image: woodShakeRoofingImage,
-        title: 'Wood Shake Roofing',
-        description: 'Natural and rustic look with excellent insulation and aesthetic appeal.',
-      },
-      {
-        image: syntheticRoofingImage,
-        title: 'Synthetic Roofing',
-        description: 'Durable and affordable alternative that mimics natural products like slate, wood, or tile.',
-      },
-      {
-        image: standingSeamImage,
-        title: 'Standing Seam Metal Roofing',
-        description: 'Sleek and modern roofing solution with superior protection against harsh weather.',
-      },
-      {
-        image: builtUpRoofingImage,
-        title: 'Built-Up Roofing (BUR)',
-        description: 'Durable and waterproof roofing solution ideal for low-slope commercial roofs.',
-      },
-      {
-        image: greenRoofImage,
-        title: 'Green Roof Installation',
-        description: 'Eco-friendly roofing solution that incorporates vegetation layers for environmental sustainability.',
-      },
-      {
-        image: roofCoatingImage,
-        title: 'Roof Coating and Maintenance',
-        description: 'Roof coating services to extend the life of your roof, including UV protection and energy efficiency improvements.',
-      },
-    ],
-  };
+
   const settings = {
     dots: true,
     infinite: true,
@@ -275,50 +123,7 @@ function App() {
 
 
                    {/* Catálogo */}
-                <section id="catalog-content" className="catalog-section">
-                  <h1 className="catalog-title">Our Services</h1>
-                  <div className="catalog-buttons">
-                    <button ref={generalButtonRef} onClick={() => handleClick('general')} className="toggle-button">
-                      General Contractor
-                    </button>
-                    <button ref={roofingButtonRef} onClick={() => handleClick('roofing')} className="toggle-button">
-                      Roofing Contractor
-                    </button>
-                  </div>
-
-                  <div className="catalog-content">
-                    {activeSection && (
-                      <div className="catalog-section">
-                        <Swiper
-                          modules={[Navigation, Pagination]}
-                          spaceBetween={20}
-                          slidesPerView={1}
-                          breakpoints={{
-                            480: {
-                              slidesPerView: 2,
-                            },
-                            1024: {
-                              slidesPerView: 4,
-                            },
-                          }}
-                          navigation
-                          pagination={{ clickable: true }}
-                        >
-                          {services[activeSection].map((service, index) => (
-                            <SwiperSlide key={index}>
-                              <div className="product-card">
-                                <img src={service.image} alt={service.title} />
-                                <h4>{service.title}</h4>
-                                <p>{service.description}</p>
-                                <button onClick={() => handleContactClick(service.title)}>Contact Us</button>
-                              </div>
-                            </SwiperSlide>
-                          ))}
-                        </Swiper>
-                      </div>
-                    )}
-                  </div>
-                </section>
+                <Catalog />
 
 
                 <section id="contact" className="contact-section">
