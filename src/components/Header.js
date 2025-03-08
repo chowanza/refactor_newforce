@@ -45,7 +45,7 @@ export default function Header({ currentPage }) {
           </li>
           <li className={`nav-button nav-buttons ${currentPage === 'affordable' ? 'active' : ''}`}>
             <Link to="/affordable-houses">
-              <button>Affordable Houses</button>
+              <button>Modular Housing</button>
             </Link>
           </li>
           <li className={`nav-button nav-buttons `}>

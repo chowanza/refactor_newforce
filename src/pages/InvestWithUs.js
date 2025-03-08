@@ -50,10 +50,10 @@ function InvestWithUs() {
         </div>
       </section>
 
-               <section  id="contact" className="contact-section">
+               {/*<section  id="contact" className="contact-section">
                   <ContactForm />
                   <img src={contactImage} alt="Contact" />
-                </section>
+                </section>*/}
             <Socials/>
     </div>
   );
