@@ -5,7 +5,6 @@ import Socials from "./Socials";
 import CatalogoDeCasas from "./CatalogoDeCasas";
 import CheckoutForm from "./CheckoutForm";
 import { Modal} from "flowbite-react"
-import "./CatalogoDeCasas.css"; // Archivo de estilos para el componente
 import "./AddonsPage.css";
 
 function AddonsPage() {
