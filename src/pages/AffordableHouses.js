@@ -2,12 +2,11 @@ import React from "react";
 import Header from "../components/Header";
 import HeroS from "../components/HeroS";
 import Socials from "../components/Socials";
-import ContactForm from "../components/ContactForm"; // Componente de contacto
-import CatalogoDeCasas from "../components/CatalogoDeCasas"; // Componente del catálogo
+import CatalogoDeCasas from '../components/CatalogoDeCasas';
 import "./AffordableHouses.css"; // Estilos específicos para esta página
 
 import heroimage from "../img/affordable.png";
-import contactImage from "../img/contact-image.jpg";
+// Import removed to fix the warning
 
 function AffordableHouses() {
   return (
@@ -24,15 +23,16 @@ function AffordableHouses() {
 
       {/* Catálogo de Casas */}
       <section className="catalogo-section">
-        
         <CatalogoDeCasas />
       </section>
 
-      {/* Contact Section */}
-      {/*<section id="contact" className="contact-section">
+      {/* Contact Section - commented out properly */}
+      {/*
+      <section id="contact" className="contact-section">
         <ContactForm />
         <img src={contactImage} alt="Contact" />
-      </section>/*}
+      </section>
+      */}
 
       {/* Social Media Links */}
       <Socials />

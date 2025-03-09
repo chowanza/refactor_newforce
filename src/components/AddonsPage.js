@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { casas } from "./casas";
 import Socials from "./Socials";
-import CatalogoDeCasas from "./CatalogoDeCasas";
+import { CatalogoDeCasas } from './IntegratedHouseSystem';
 import CheckoutForm from "./CheckoutForm";
 import { Modal} from "flowbite-react"
 import "./AddonsPage.css";

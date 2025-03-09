@@ -10,6 +10,11 @@ export default function Header({ currentPage }) {
     window.scrollTo(0, 0);
   }, [currentPage]);
 
+  // Función para hacer scroll al inicio
+  const handleLogoClick = () => {
+    window.scrollTo(0, 0);
+  };
+
   return (
     <div className={`header-outer-container`}>
       <Navbar className={`custom-navbar h-fixed fixed w-full z-50`}>
@@ -19,6 +24,7 @@ export default function Header({ currentPage }) {
             alt="Logo"
             className="mr-2 object-contain logo"
             style={{ width: "120px", height: "60px" }}
+            onClick={handleLogoClick} // Añadido el evento onClick
           />
         </Navbar.Brand>
         <Navbar.Toggle id="custom-navbar-toggler" />
@@ -49,7 +55,7 @@ export default function Header({ currentPage }) {
             </Link>
           </li>
           <li className={`nav-button nav-buttons `}>
-              <button><a href="tel:(941) 337-0680">Call Us Now!</a></button>
+            <button><a href="tel:(941) 337-0680">Call Us Now!</a></button>
           </li>
         </Navbar.Collapse>
       </Navbar>

@@ -1,16 +1,29 @@
-import React, { useState } from 'react'
-import { casas } from './casas'
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { casas } from './casas';
 
-function CatalogoDeCasas() {
+function CatalogoDeCasas({ onSelectHouse }) {
+  const navigate = useNavigate();
+
+  // Handle the click if no onSelectHouse prop is provided
+  const handleCasaClick = (casa) => {
+    if (onSelectHouse) {
+      onSelectHouse(casa);
+    } else {
+      navigate(`/Affordable-Houses/addons/${casa.id}`);
+    }
+  };
+
   return (
     <section>
-      <h2>Our Houses</h2>
+      <h2 className="text-3xl font-bold text-center mb-8">Our Houses</h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
         {casas.map((casa, index) => {
           return (
             <div
               key={index}
-              className='bg-white shadow-lg rounded-lg overflow-hidden flex  flex-col content-center justify-center cursor-pointer transform transition duration-300 ease-in-out hover:-translate-y-2 group'
+              className='bg-white shadow-lg rounded-lg overflow-hidden flex flex-col content-center justify-center cursor-pointer transform transition duration-300 ease-in-out hover:-translate-y-2 group'
+              onClick={() => handleCasaClick(casa)}
             >
               <div className='w-full h-56 overflow-hidden'>
                 <img
@@ -47,7 +60,7 @@ function CatalogoDeCasas() {
         })}
       </div>
     </section>
-  )
+  );
 }
 
-export default CatalogoDeCasas
+export default CatalogoDeCasas;

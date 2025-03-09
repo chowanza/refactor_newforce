@@ -1,26 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './HeroS.css';
+import ContactoModal from './ContactoModal';
 
 const HeroSimple = ({ heroTitle, heroSubtitle, heroImg, knowUsLink }) => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState('');
 
-  const scrollToContactForm = () => {
-    const contactForm = document.getElementById('contact-form');
-    const navbarHeight = document.querySelector('.custom-navbar').offsetHeight;
-    const offsetPosition = contactForm.offsetTop - navbarHeight;
-
-    window.scrollTo({
-      top: offsetPosition,
-      behavior: 'smooth'
-    });
+  const openModal = (product) => {
+    setSelectedProduct(product);
+    setModalOpen(true);
   };
 
-  const scrollToCatalogContent = () => {
-    const catalogContent = document.getElementById('catalog-content');
-    const navbarHeight = document.querySelector('.custom-navbar').offsetHeight;
-    const offsetPosition = catalogContent.offsetTop - navbarHeight;
+  const closeModal = () => {
+    setModalOpen(false);
+  };
 
+  const scrollFullDown = () => {
+    // Calculate the full height of the document minus the viewport height
+    const fullHeight = document.documentElement.scrollHeight - window.innerHeight;
+    
     window.scrollTo({
-      top: offsetPosition,
+      top: fullHeight,
       behavior: 'smooth'
     });
   };
@@ -42,13 +42,15 @@ const HeroSimple = ({ heroTitle, heroSubtitle, heroImg, knowUsLink }) => {
                   <button className="heroS-button">Know Us</button>
                 </a>
               ) : (
-                <button className="heroS-button" onClick={scrollToCatalogContent}>Know Us</button>
+                <button className="heroS-button" onClick={scrollFullDown}>Know Us</button>
               )}
-              <button className="heroS-button" onClick={scrollToContactForm}>Contact Us</button>
+              <button className="heroS-button" onClick={() => openModal('General Inquiry')}>Contact Us</button>
             </div>
           </div>
         </div>
       </div>
+
+      {modalOpen && <ContactoModal selectedProduct={selectedProduct} closeContactPanel={closeModal} />}
     </div>
   );
 };
