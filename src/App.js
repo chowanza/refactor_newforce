@@ -1,6 +1,7 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css'; // Assuming you have App.css for global styles
+import ContactoModal from './components/ContactoModal';
 
 // Import your components
 import Header from './components/Header';
@@ -46,6 +47,22 @@ function App() {
   const roofingRef = useRef(null);
   const [activeSection, setActiveSection] = useState('general');
 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState('');
+
+  const openModal = (product) => {
+    setSelectedProduct(product);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  useEffect(() => {
+    openModal('General Inquiry');
+  }, []);
+
   const scrollToGeneral = () => {
     if (generalRef.current) {
       generalRef.current.scrollIntoView({ behavior: 'smooth' });
@@ -81,6 +98,7 @@ function App() {
             element={
               <>
                 <Header currentPage="home" />
+                {modalOpen && <ContactoModal selectedProduct={selectedProduct} closeContactPanel={closeModal} />}
                 <HeroMain
                   heroTitle="New Force Construction"
                   heroSubtitle="is your all-in-one solution for a wide range of construction and investment services."
