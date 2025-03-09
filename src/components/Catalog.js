@@ -137,6 +137,7 @@ function Catalog({ generalRef, roofingRef }) {
     <div
       className="bg-white shadow-lg rounded-lg overflow-hidden flex flex-col content-center justify-center cursor-pointer transform transition duration-300 ease-in-out hover:-translate-y-2 group"
       aria-label={service.title}
+      onClick={() => openModal(service.title)}
     >
       <div className="w-full h-40 overflow-hidden">
         <img
@@ -151,7 +152,6 @@ function Catalog({ generalRef, roofingRef }) {
       </div>
       <button
         className="w-full bg-[#ff7300] text-white py-2 group-hover:bg-[#1B355B]"
-        onClick={() => openModal(service.title)}
       >
         Get a Quote
       </button>
