@@ -17,12 +17,13 @@ function AffordableHouses() {
       {/* Hero Section */}
       <HeroS
         heroTitle="Modular Housing"
-        heroSubtitle="Discover affordable, eco-friendly housing solutions tailored for your lifestyle."
+        heroSubtitle="Discover modular housing, eco-friendly solutions tailored for your lifestyle."
         heroImg={heroimage}
+        sectionId="our-houses"
       />
 
       {/* Catálogo de Casas */}
-      <section className="catalogo-section">
+      <section id="our-houses" className="catalogo-section">
         <CatalogoDeCasas />
       </section>
 

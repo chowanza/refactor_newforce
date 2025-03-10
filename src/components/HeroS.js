@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './HeroS.css';
 import ContactoModal from './ContactoModal';
 
-const HeroSimple = ({ heroTitle, heroSubtitle, heroImg, knowUsLink }) => {
+const HeroSimple = ({ heroTitle, heroSubtitle, heroImg, knowUsLink, sectionId }) => {
   const [modalOpen, setModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState('');
 
@@ -15,6 +15,7 @@ const HeroSimple = ({ heroTitle, heroSubtitle, heroImg, knowUsLink }) => {
     setModalOpen(false);
   };
 
+  // Keep the original scrollFullDown function for other pages
   const scrollFullDown = () => {
     // Calculate the full height of the document minus the viewport height
     const fullHeight = document.documentElement.scrollHeight - window.innerHeight;
@@ -23,6 +24,14 @@ const HeroSimple = ({ heroTitle, heroSubtitle, heroImg, knowUsLink }) => {
       top: fullHeight,
       behavior: 'smooth'
     });
+  };
+  
+  // New function for targeted scrolling
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
   };
 
   return (
@@ -42,7 +51,7 @@ const HeroSimple = ({ heroTitle, heroSubtitle, heroImg, knowUsLink }) => {
                   <button className="heroS-button">Know Us</button>
                 </a>
               ) : (
-                <button className="heroS-button" onClick={scrollFullDown}>Know Us</button>
+                <button className="heroS-button" onClick={sectionId ? () => scrollToSection(sectionId) : scrollFullDown}>Know Us</button>
               )}
               <button className="heroS-button" onClick={() => openModal('General Inquiry')}>Contact Us</button>
             </div>
